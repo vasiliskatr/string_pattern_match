@@ -13,7 +13,8 @@
 #
 #
 # To run in command line / terminal,
-#   try for example: % python pattern_match.py match sunmoonsun aba 
+#   try: % python pattern_match.py <word> <pattern> 
+#   example:  % python pattern_match.py priceheroprice aba'
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 
@@ -152,12 +153,12 @@ def check(word,pat):
         print(dictionary)
         return True
     
-    if len(word)==len(pat):
-        print('No match!')
+    if word == pat:
+        print('inevitably a match')
         dictionary = get_valid_chunks(word, pat)
         print(dictionary)
-        return False
-
+        return True
+    
     if len(set(pat))==len(pat):
         dictionary = get_valid_chunks(word, pat)
         combinations ,roots = get_comb(dictionary,pat, word)
@@ -207,11 +208,11 @@ def match(w,p):
 
 
 if __name__ == '__main__':
-
-    if sys.argv[1] == 'match':
-            match(sys.argv[2], sys.argv[3])
+    
+    if len(sys.argv) > 1:
+        match(sys.argv[1], sys.argv[2])
   
     else:
         print()
         print("No strings given.")
-        print('Try for example: % python pattern_match.py match blabla aa')
+        print('Try for example: % python pattern_match.py priceheroprice aba')
