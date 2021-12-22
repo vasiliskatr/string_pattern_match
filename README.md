@@ -9,4 +9,4 @@ Example: \
   yields--> Pattern match!\
             'a'--> 'price'\
             'a'--> 'price'\
-            'b'--> 'tag'\
+            'b'--> 'tag'
